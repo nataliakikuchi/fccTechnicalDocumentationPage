@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>READ.me Projeto CWA Creditas</title>
+  <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+  <header class="main__header">
+    <aside class="main__menu">
+      <nav id="navbar">
+       <header> 
+         <ul class="nav__list">
+          <li class="nav__list-item">
+            <a class="nav-link" href="#Customer_Web_App">
+              Customer Web App
+            </a>
+          </li>
+          <li class="nav__list-item">
+            <a class="nav-link" href="#Introduzindo"> 
+              Introduzindo
+            </a>
+          </li>
+          <li class="nav__list-item">
+            <a class="nav-link" href="#Requisitos"> 
+              Requisitos
+            </a>
+          </li> 
+          <li class="nav__list-item">
+            <a class="nav-link" href="#Instalar"> 
+              Instalar
+            </a>
+          </li> 
+          <li class="nav__list-item">
+            <a class="nav-link" href="#Rodar_o_projeto_para_desenvolvimento"> 
+              Rodar o projeto para desenvolvimento
+            </a>
+          </li>
+          <li class="nav__list-item">
+            <a class="nav-link" href="#Rodar_os_testes"> 
+              Rodar os testes
+            </a>
+          </li> 
+        </ul>
+      </header>
+      </nav>
+    </aside>  
+  </header>
+  <main class="doc" id="main-doc">
+    <section class="main-section" id="Customer_Web_App">
+      <header class="doc-header">
+        Customer Web App
+      </header>
+      <div class="doc-content">
+        <p class="main__text" id="obs-text">
+          Obs.: Este projeto era chamado "Front" até o dia 10/01/2019. Algumas configurações do CircleCI, da AWS e outros ainda podem se referir ao nome antigo.
+        </p> 
+      </div>  
+    </section>  
+
+    <section class="main-section" id="Introduzindo">
+        <header class="doc-header">
+          Introduzindo
+        </header>
+        <div class="doc-content">
+          <p class="main__text">
+            O projeto customer-web-app é um SPA construído em Ember para ser a interface web que o cliente final da Creditas acessa em todo o processo de originação (ou seja, da criação do lead até ser pago o empréstimo).
+            O deploy é feito no sub-domínio app.creditas.com.br (ambiente de staging em app-staging.creditas.com.br).
+          </p>
+        </div>  
+      </section>  
+
+    <section class="main-section" id="Requisitos">
+      <header class="doc-header">
+        Requisitos  
+      </header>
+      <div class="doc-content">
+        <p class="main__text">
+          Para rodar o projeto você precisa ter instalado em seu computador:       
+        </p>
+        <ul>
+          <li>
+            <a href="#">Git</a>
+          </li>
+          <li>
+            <a href="#">Node.js</a> (com NPM)
+          </li>
+          <li>
+            <a href="#">Bower</a>
+          </li>
+          <li>
+            <a href="#">Ember CLI</a>
+          </li>
+          <li>
+            <a href="#">PhantomJS</a>
+          </li>
+        </ul>
+      </div>  
+    </section>  
+
+    <section class="main-section" id="Instalar">
+      <header class="doc-header">
+        Instalar  
+      </header>
+      <div class="doc-content">
+        <p>
+          -> Clonar esse repositório localmente: <br>
+        </p>
+        <p>  
+          (with SSH) <code>git clone git@github.com:Creditas/customer-web-app.git</code> <br>
+          (with HTTPS) <code>git clone https://github.com/Creditas/customer-web-app.git</code> <br>
+        </p>    
+        <p>
+         -> Mudar para o diretório criado <code>cd customer-web-app</code> <br>
+          -> <code>npm install</code> <br>
+          -> <code>bower install</code>
+        </p>
+      </div>
+    </section>
+
+    <section class="main-section" id="Rodar_o_projeto_para_desenvolvimento">
+      <header class="doc-header">
+        Rodar o projeto para desenvolvimento  
+      </header>
+      <div class="doc-content">          <p>
+        -> Usando os hosts em ambiente staging do <code>core</code> e do <code>auth</code><br><br>
+        <code>AUTH_HOST=https://auth-staging.creditas.com.br ember server --proxy=https://core-staging.creditas.com.br</code><br><br>
+        </p>
+          Você deve apontar a variável de ambiente <code>AUTH_HOST</code> para o endereço staging do servidor de autenticação. Sem esse valor, o servidor de autenticação usado pela flag <code>--proxy</code> pode gerar comportamentos inesperados.<br><br>
+        <p>
+          -> Visite a aplicação em: <a href="http://localhost:4200">http://localhost:4200</a><br><br>
+        </p>
+            <strike>Usando o mirage como servidor</strike> (NÃO USAR: o mirage não está propriamente configurado neste projeto atualmente)<br><br>
+          <p>
+            -> <code>ember server</code><br><br>
+
+            -> Visite a aplicação em: <a href="http://localhost:4200">http://localhost:4200</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="main-section" id="Rodar_os_testes">
+          <header class="doc-header">
+            Rodar os testes  
+          </header>
+          <div class="doc-content">
+            <p>
+             -> <code>ember test</code> ou <br>
+             -> <code>ember test --server</code> ou <br>
+             -> <code>Com o projeto rodando, acessar http://localhost:4200/tests</code> <br>
+            </p>
+             <h4>Testes End-to-End</h4>
+            <p>
+             Nós também rodamos um teste end-to-end(e2e) do fluxo de cadastro no projeto: https://github.com/Creditas/tests-e2e-front <br>
+            </p>
+              O teste e2e roda no CircleCI a cada deploy no ambiente staging.<br>
+            <p>
+              É importante acompanhar se o teste e2e está passando sempre e identificar possíveis erros. Em geral, chega uma notificação no email quando o teste quebra, mas é possível checar diretamente no site do CircleCI.
+            </p>
+          </div>
+        </section>
+
+  </main>
+  <footer class="footer">
+    <p class="footer__text">&copy; 2019 Made with <img class="heart" src="img/heart.png" alt="Ilustração de um coraçãozinho"> by Natália Kikuchi</p>
+  </footer>
+</body>
+</html>
